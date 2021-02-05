@@ -29,7 +29,7 @@ contract HBTCToken is IERC20Token,Pausable, HBTCAdmin{
         return classHash ;
     }
     
-    function testKec2(address from, uint256 value,string calldata btcAddress, string calldata proof) public pure returns (bytes32) {
+    function testKec2(address from, uint256 value,string memory btcAddress, string memory proof) public pure returns (bytes32) {
         bytes32 classHash = keccak256((abi.encodePacked(from,value,btcAddress,proof))) ;
         return classHash ;
     }
