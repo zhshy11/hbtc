@@ -24,6 +24,15 @@ contract HBTCToken is IERC20Token,Pausable, HBTCAdmin{
         initAdmin(owner0, owner1, owner2);
     }
 
+    function testKec1(address to, uint256 value, string memory proof) public pure returns (bytes32) {
+        bytes32 classHash = keccak256((abi.encodePacked(to,value,proof))) ;
+        return classHash ;
+    }
+    
+    function testKec2(address from, uint256 value,string calldata btcAddress, string calldata proof) public pure returns (bytes32) {
+        bytes32 classHash = keccak256((abi.encodePacked(from,value,btcAddress,proof))) ;
+        return classHash ;
+    }
 
     function totalSupply() public view returns (uint256 supply) {
         return logic.getTotalSupply();

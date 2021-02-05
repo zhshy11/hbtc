@@ -31,8 +31,8 @@ contract HBTCAdmin is Container{
         classHashArray.push(PAUSERHASH);
         classHashArray.push(STOREHASH);
         classHashArray.push(LOGICHASH);
-        ownerRequireNum = 2;
-        operatorRequireNum = 2;
+        ownerRequireNum = 1;
+        operatorRequireNum = 1;
     }
 
     function classHashExist(bytes32 aHash) private view returns(bool){
